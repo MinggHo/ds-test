@@ -20,6 +20,7 @@ const StyledCard = styled(Card)`
   }
   @media ${({ theme }) => theme.mediaQueries.above992} {
     margin-bottom: 9rem;
+    animation: ${fadeIn} 2.5s ease-in-out;
     .card {
       position: absolute;
       bottom: -20%;
@@ -33,7 +34,7 @@ const StyledCard = styled(Card)`
 `;
 
 const Section = styled.section`
-  animation: ${fadeIn} 2s linear;
+  animation: ${fadeIn} 1.5s ease-in-out;
 `;
 
 function Video() {

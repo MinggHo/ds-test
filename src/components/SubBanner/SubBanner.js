@@ -21,7 +21,7 @@ const StyledCard = styled(Card)`
     padding: 2.5rem 3rem;
   }
   .card-text {
-    animation: ${fadeIn} 2s linear;
+    /* animation: ${fadeIn} 2s linear; */
   }
   @media ${({ theme }) => theme.mediaQueries.above992} {
     .card-title {
@@ -31,9 +31,8 @@ const StyledCard = styled(Card)`
       display: flex;
       flex-flow: column;
       justify-content: center;
-      top: 350px;
-      bottom: -230px;
-      /* height: 40%; */
+      top: 50%;
+      bottom: 0;
       right: 8%;
       width: 25%;
       min-width: 350px;
@@ -42,7 +41,7 @@ const StyledCard = styled(Card)`
       transition: all 0.3s ease-in-out;
 
       &.show {
-        bottom: 0;
+        /* bottom: 0; */
         top: 0;
       }
     }
@@ -55,9 +54,7 @@ const StyledCard = styled(Card)`
 function SubBanner() {
   const [show, setShow] = useState(false);
   const showMore = () => {
-    // Add classname
     setShow(!show);
-    console.log("Inside show more function");
   };
   return (
     <section>
@@ -66,7 +63,7 @@ function SubBanner() {
         <Card.Body className={`${show ? "show" : "hide"}`}>
           <Card.Subtitle>The Units</Card.Subtitle>
           <Card.Title>Seamless Lifestyle</Card.Title>
-          {!show && (
+          {!show ? (
             <StyledButton
               className="d-none d-md-block"
               onClick={showMore}
@@ -74,12 +71,15 @@ function SubBanner() {
             >
               More Details
             </StyledButton>
+          ) : (
+            <>
+              <Card.Text>
+                Build to create a holistic growth in you with access to
+                facilities and amenities at easy reach.
+              </Card.Text>
+              <StyledButton primary="primary">View Units</StyledButton>
+            </>
           )}
-          <Card.Text>
-            Build to create a holistic growth in you with access to facilities
-            and amenities at easy reach.
-          </Card.Text>
-          <StyledButton primary="primary">View Units</StyledButton>
         </Card.Body>
       </StyledCard>
     </section>

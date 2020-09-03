@@ -25,7 +25,7 @@ const Overlay = styled.div`
   transform: translate(-50%, -50%);
   width: 80%;
   text-align: center;
-  animation: ${fadeIn} 2.5s linear;
+  animation: ${fadeIn} 2s ease-in-out;
   color: white;
   h1 {
     margin-top: 0;
@@ -54,7 +54,7 @@ const Overlay = styled.div`
   }
 `;
 const Section = styled.section`
-  animation: ${fadeIn} 2s linear;
+  animation: ${fadeIn} 1.5s ease-in-out;
 `;
 
 function Banner() {
