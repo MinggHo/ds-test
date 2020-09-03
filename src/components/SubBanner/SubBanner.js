@@ -52,7 +52,7 @@ const StyledCard = styled(Card)`
 `;
 
 function SubBanner() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(window.innerWidth > 991 ? false : true);
   const showMore = () => {
     setShow(!show);
   };
